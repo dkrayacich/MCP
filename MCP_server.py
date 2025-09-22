@@ -11,4 +11,13 @@ DOCS = {
 }
 
 @mcp.resource("resource://docs/{doc_id}")
-def get_doc(doc_id: str)
+def get_doc(doc_id: str) -> Resource:
+    return Resource(uri = f"resource://docs/{doc_id}", 
+                    name = f"Doc {doc_id}", 
+                    mimeType = "text/plain", 
+                    description = "document in the dataset")
+
+@mcp.read_resource("resource://docs/{doc_id}")
+def get_contents(doc_id: str) -> List(TextContent):
+    return [TextContent(type="text", text=DOCS.get(doc_id, ""))]
+
