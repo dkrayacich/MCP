@@ -5,11 +5,6 @@ from mcp.client.stdio import StdioServer
 
 MODEL = "llama3.1"
 
-server = StdioServer(command=[sys.executable, "server.py"])
-client = server.start()
-
-tools = client.list_tools().result()
-
 def mcp_tools_to_ollama(tools):
     out = []
     for t in tools.tools:
@@ -23,10 +18,8 @@ def mcp_tools_to_ollama(tools):
         })
     return out
 
-ollama_tools = mcp_tools_to_ollama(tools)
-
-def call_mcp_tool(name: str, arguments: Dict[str, Any]) -> Dict[str, Any]:
-    return client.tool_call(name, arguments).result()
+async def main():
+    async with Client("./MCP_server.py") as client:
 
 user_q = "Find MCP basics and cite the resource."
 resp = ollama.chat(
