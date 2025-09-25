@@ -1,5 +1,6 @@
 from typing import List, Dict
-from mcp.server.fastmcp import FastMCP, Resource, TextContent
+from mcp.server.fastmcp import FastMCP
+from mcp.types import Resource, TextContent
 from pydantic import BaseModel
 
 mcp = FastMCP("test_server")
