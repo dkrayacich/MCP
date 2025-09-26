@@ -6,7 +6,7 @@ MODEL = "llama3.1"
 
 def mcp_tools_to_ollama(tools):
     out = []
-    for t in tools.tools:
+    for t in tools:
         out.append({
             "type": "function",
             "function": {
