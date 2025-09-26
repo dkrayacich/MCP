@@ -24,8 +24,8 @@ async def main():
 
         user_q = "Find MCP basics and cite the resource."
         resp = ollama.chat(
-            MODEL, 
-            messages={"role":"user","content":user_q},
+            model=MODEL, 
+            messages=[{"role":"user","content":user_q}],
             tools=ollama_tools,
         )
 
@@ -34,7 +34,7 @@ async def main():
             result = await client.call_tool(tc["function"]["name"], json.loads(tc["function"]["arguments"]))
 
             resp = ollama.chat(
-                MODEL,
+                model=MODEL,
                 messages=[
                     {"role":"user","content":user_q},
                     {"role":"tool","content":json.dumps(result), "name":tc["function"]["name"]}
