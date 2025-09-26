@@ -26,7 +26,7 @@ class SearchArgs(BaseModel):
     query:str
     k:int = 5
 
-@mcp_serv.tool()
+@mcp_serv.tool("search", input_model=SearchArgs)
 def search(args: SearchArgs) -> Dict:
     q = args.query.lower()
     hits = []

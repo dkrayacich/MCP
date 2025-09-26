@@ -31,7 +31,7 @@ async def main():
 
         while resp.get("message", {}).get("tool_calls"):
             tc = resp["message"]["tool_calls"][0]
-            result = await client.call_tool(tc["function"]["name"], json.loads(tc["function"]["arguments"]))
+            result = await client.call_tool(tc["function"]["name"], tc["function"]["arguments"])
 
             resp = ollama.chat(
                 model=MODEL,
