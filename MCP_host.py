@@ -37,7 +37,7 @@ async def main():
                 model=MODEL,
                 messages=[
                     {"role":"user","content":user_q},
-                    {"role":"tool","content":json.dumps(result), "name":tc["function"]["name"]}
+                    {"role":"tool","content":json.dumps(result.structured_content), "name":tc["function"]["name"]}
                 ],
                 tools=ollama_tools
             )

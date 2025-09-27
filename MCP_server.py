@@ -6,7 +6,7 @@ from pydantic import BaseModel
 mcp_serv = FastMCP("test_server")
 
 DOCS = {
-    "1": "MCP is an open protocol for connecting models to tools and data.",
+    "1": "MCP basics are needed to make an MCP server and client",
     "2": "Resources in MCP are addressable by URI and provide context.",
     "3": "Tools in MCP let models call functions like search or lookup."
 }
@@ -26,9 +26,9 @@ class SearchArgs(BaseModel):
     query:str
     k:int = 5
 
-@mcp_serv.tool("search", input_model=SearchArgs)
-def search(args: SearchArgs) -> Dict:
-    q = args.query.lower()
+@mcp_serv.tool()
+def search(query:str, k:int = 5) -> Dict:
+    q = query.lower()
     hits = []
     for doc_id, text in DOCS.items():
         if q in text.lower():
@@ -37,7 +37,7 @@ def search(args: SearchArgs) -> Dict:
                 "uri": f"resource://docs/{doc_id}", 
                 "snippet": text[:200]
             })
-    return {"results": hits[: args.k]}
+    return {"results": hits[: k]}
 
 if __name__ == "__main__":
     mcp_serv.run()
