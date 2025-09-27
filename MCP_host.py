@@ -22,16 +22,18 @@ async def main():
         tool_objs = await client.list_tools()
         ollama_tools = mcp_tools_to_ollama(tool_objs)
 
-        user_q = "Find MCP basics and cite the resource."
+        user_q = "How many points does lebron average?"
         resp = ollama.chat(
             model=MODEL, 
             messages=[{"role":"user","content":user_q}],
             tools=ollama_tools,
         )
+        print(resp)
 
         while resp.get("message", {}).get("tool_calls"):
             tc = resp["message"]["tool_calls"][0]
             result = await client.call_tool(tc["function"]["name"], tc["function"]["arguments"])
+            print(result)
 
             resp = ollama.chat(
                 model=MODEL,
