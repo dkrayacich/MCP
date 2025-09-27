@@ -22,7 +22,7 @@ async def main():
         tool_objs = await client.list_tools()
         ollama_tools = mcp_tools_to_ollama(tool_objs)
 
-        user_q = "How many points does lebron average?"
+        user_q = "Give me info on Johnson v. Metro"
         resp = ollama.chat(
             model=MODEL, 
             messages=[{"role":"user","content":user_q}],

@@ -6,26 +6,26 @@ from pydantic import BaseModel
 mcp_serv = FastMCP("test_server")
 
 DOCS = {
-    "1": "LeBron James averaged 27 points, 7 rebounds, and 9 assists.",
-    "2": "Stephen Curry averaged 30 points, 5 rebounds, and 6 assists.",
-    "3": "Giannis Antetokounmpo averaged 29 points, 11 rebounds, and 5 assists.",
-    "4": "Nikola Jokic averaged 26 points, 12 rebounds, and 9 assists.",
-    "5": "Luka Doncic averaged 32 points, 8 rebounds, and 8 assists.",
-    "6": "Joel Embiid averaged 33 points, 10 rebounds, and 4 assists.",
-    "7": "Kevin Durant averaged 29 points, 7 rebounds, and 5 assists.",
-    "8": "Kawhi Leonard averaged 24 points, 6 rebounds, and 4 assists.",
-    "9": "Jayson Tatum averaged 28 points, 8 rebounds, and 4 assists.",
-    "10": "Jimmy Butler averaged 23 points, 6 rebounds, and 5 assists.",
-    "11": "Ja Morant averaged 27 points, 6 rebounds, and 8 assists.",
-    "12": "Damian Lillard averaged 32 points, 4 rebounds, and 7 assists.",
-    "13": "Anthony Davis averaged 25 points, 11 rebounds, and 3 blocks.",
-    "14": "Zion Williamson averaged 26 points, 7 rebounds, and 4 assists.",
-    "15": "Devin Booker averaged 28 points, 5 rebounds, and 5 assists.",
-    "16": "Donovan Mitchell averaged 27 points, 4 rebounds, and 5 assists.",
-    "17": "Shai Gilgeous-Alexander averaged 31 points, 5 rebounds, and 6 assists.",
-    "18": "Kyrie Irving averaged 26 points, 4 rebounds, and 6 assists.",
-    "19": "James Harden averaged 22 points, 6 rebounds, and 10 assists.",
-    "20": "Jaylen Brown averaged 26 points, 7 rebounds, and 3 assists."
+    "1": "Marbury v. Madison established that courts have the power of judicial review.",
+    "2": "Brown v. Board of Education established that segregation in public schools is unconstitutional.",
+    "3": "Roe v. Wade established that the Constitution protects a right to privacy regarding abortion.",
+    "4": "Miranda v. Arizona established that suspects must be informed of their rights before police questioning.",
+    "5": "Gideon v. Wainwright established that states must provide counsel to indigent defendants in criminal cases.",
+    "6": "Tinker v. Des Moines established that students do not lose First Amendment rights at school.",
+    "7": "United States v. Nixon established that executive privilege is limited and subject to judicial review.",
+    "8": "New York Times v. United States established that prior restraint on the press is unconstitutional.",
+    "9": "Loving v. Virginia established that bans on interracial marriage violate the Equal Protection Clause.",
+    "10": "Obergefell v. Hodges established that same-sex couples have a constitutional right to marry.",
+    "11": "Plessy v. Ferguson established that 'separate but equal' facilities were constitutional.",
+    "12": "Bush v. Gore established that recount procedures in Florida violated the Equal Protection Clause.",
+    "13": "Korematsu v. United States established that internment of Japanese Americans was upheld as constitutional.",
+    "14": "Citizens United v. FEC established that corporations have free speech rights in campaign spending.",
+    "15": "Texas v. Johnson established that flag burning is protected symbolic speech.",
+    "16": "Mapp v. Ohio established that illegally obtained evidence cannot be used in state courts.",
+    "17": "McCulloch v. Maryland established that Congress has implied powers under the Necessary and Proper Clause.",
+    "18": "Schenck v. United States established that speech creating a clear and present danger is not protected.",
+    "19": "Griswold v. Connecticut established that marital privacy is protected from state restrictions on contraception.",
+    "20": "Johnson v. Metro Transit established that public transportation must provide equal digital access to riders."
 }
 
 @mcp_serv.resource("resource://docs/{doc_id}")
