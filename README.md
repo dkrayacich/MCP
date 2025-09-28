@@ -3,13 +3,13 @@
 This repository implements a **Model Context Protocol (MCP)** setup consisting of a custom **MCP server** and **MCP host**, designed to extend LLM capabilities by exposing external tools and resources in a structured, reliable way.
 
 The project demonstrates how to:
-- Build an MCP server using [FastMCP] with custom resources and tools.  
+- Build an MCP server using [FastMCP](https://pypi.org/project/fastmcp/) with custom resources and tools.  
 - Run an MCP host that connects to the server and integrates with an LLM (via [Ollama](https://ollama.ai/)).  
 - Enable basic **text-based search** across datasets, where LLMs issue tool calls and incorporate results into their responses.  
 
 ---
 
-## 🚀 Features
+## Features
 
 ### **Custom MCP Server**
 - Exposes documents/resources as MCP resources.  
